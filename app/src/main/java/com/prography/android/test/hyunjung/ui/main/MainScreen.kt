@@ -41,29 +41,44 @@ fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
 
         HorizontalDivider(thickness = 1.dp, color = Gray30)
 
-        if (bookmarks.isNotEmpty()) {
-            Text(
-                "북마크",
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(top = 30.dp, start = 20.dp, end = 20.dp, bottom = 10.dp)
-            )
+        LazyColumn(modifier = Modifier.padding(horizontal = 10.dp)) {
 
-            LazyRow(modifier = Modifier.padding(horizontal = 10.dp)) {
-                items(bookmarks) { photo ->
-                    ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) })
+            item {
+                if (bookmarks.isNotEmpty()) {
+                    Text(
+                        text = "북마크",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(
+                            top = 30.dp,
+                            start = 20.dp,
+                            end = 20.dp,
+                            bottom = 10.dp
+                        )
+                    )
+
+                    LazyRow(modifier = Modifier.padding(horizontal = 10.dp)) {
+                        items(bookmarks) { photo ->
+                            ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) })
+                        }
+                    }
                 }
             }
-        }
 
-        Text(
-            "최신 이미지",
-            fontSize = 18.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(top = 22.dp, start = 20.dp, end = 20.dp, bottom = 10.dp)
-        )
+            item {
+                Text(
+                    text = "최신 이미지",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(
+                        top = 22.dp,
+                        start = 20.dp,
+                        end = 20.dp,
+                        bottom = 10.dp
+                    )
+                )
+            }
 
-        LazyColumn(modifier = Modifier.padding(horizontal = 10.dp)) {
             items(photos.distinctBy { it.id }, key = { photo -> photo.id }) { photo ->
                 ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) })
             }
