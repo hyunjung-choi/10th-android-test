@@ -1,4 +1,4 @@
-package com.prography.android.test.hyunjung.ui.main
+package com.prography.android.test.hyunjung.ui.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(
+class HomeViewModel @Inject constructor(
     private val repository: PhotoRepository
 ) : ViewModel() {
 
