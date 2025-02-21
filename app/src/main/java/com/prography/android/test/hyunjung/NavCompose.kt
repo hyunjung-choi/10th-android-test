@@ -40,10 +40,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.prography.android.test.hyunjung.navigation.Action
-import com.prography.android.test.hyunjung.navigation.Destinations.Bookmark
 import com.prography.android.test.hyunjung.navigation.Destinations.Home
+import com.prography.android.test.hyunjung.navigation.Destinations.Random
 import com.prography.android.test.hyunjung.navigation.Screen
-import com.prography.android.test.hyunjung.ui.bookmark.BookmarkScreen
+import com.prography.android.test.hyunjung.ui.random.RandomScreen
 import com.prography.android.test.hyunjung.ui.theme.Black
 import com.prography.android.test.hyunjung.ui.theme.Gray30
 import com.prography.android.test.hyunjung.ui.theme.White
@@ -54,7 +54,7 @@ import com.prography.android.test.hyunjung.ui.theme._10thandroidtestTheme
 fun NavCompose() {
     val items = listOf(
         Screen.Home,
-        Screen.Bookmark
+        Screen.Random
     )
 
     val navController = rememberNavController()
@@ -86,7 +86,7 @@ fun NavCompose() {
             bottomBar = {
                 CustomNavigationBar(
                     containerColor = Black,
-                    ) {
+                ) {
                     val navBackStackEntry by navController.currentBackStackEntryAsState()
                     val currentDestination = navBackStackEntry?.destination
 
@@ -137,8 +137,8 @@ fun NavCompose() {
                 composable(Home) {
                     HomeScreen()
                 }
-                composable(Bookmark) {
-                    BookmarkScreen()
+                composable(Random) {
+                    RandomScreen()
                 }
             }
         }
@@ -168,9 +168,9 @@ fun CustomNavigationBar(
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically,
 
-        ){
+            ) {
             Row(
-                modifier=Modifier.fillMaxWidth(0.7f)
+                modifier = Modifier.fillMaxWidth(0.7f)
             ) {
                 content()
             }

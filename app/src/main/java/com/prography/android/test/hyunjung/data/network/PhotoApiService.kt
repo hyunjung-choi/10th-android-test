@@ -7,11 +7,9 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.headers
+import io.ktor.client.statement.HttpResponse
 import javax.inject.Inject
 import javax.inject.Singleton
-import android.util.Log
-import io.ktor.client.statement.HttpResponse
-import io.ktor.client.statement.bodyAsText
 
 @Singleton
 class PhotoApiService @Inject constructor(
@@ -27,10 +25,8 @@ class PhotoApiService @Inject constructor(
                     append("Authorization", "Client-ID $accessKey")
                 }
             }
-            Log.d("HJ:::API_RESPONSE", "Status: ${response.status}, Body: ${response.bodyAsText()}")
             response.body()
         } catch (e: Exception) {
-            Log.e("HJ:::API_ERROR", "API 호출 실패: ${e.message}")
             emptyList()
         }
     }
