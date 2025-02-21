@@ -75,8 +75,8 @@ dependencies {
     // Room
     implementation(libs.androidx.room.common)
     implementation(libs.androidx.room.ktx)
-    implementation("androidx.room:room-runtime:2.6.1") // Example version
-    ksp("androidx.room:room-compiler:2.6.1")
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
 
     // Coil
     implementation(libs.coil.compose)

@@ -51,61 +51,61 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
 
         ) {
         if (bookmarks.isNotEmpty()) {
-           // item {
-                Text(
-                    text = "북마크",
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(
-                            top = 30.dp,
-                            start = 20.dp,
-                            end = 20.dp,
-                            bottom = 10.dp
-                        )
-                )
-            //}
-            //item {
-                LazyRow(modifier = Modifier.padding(horizontal = 10.dp)) {
-                    items(bookmarks) { photo ->
-                        ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) })
-                    }
-                }
-            }
-        //}
-
-        //item {
+            // item {
             Text(
-                text = "최신 이미지",
+                text = "북마크",
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
                     .padding(
-                        top = 22.dp,
+                        top = 30.dp,
                         start = 20.dp,
                         end = 20.dp,
                         bottom = 10.dp
                     )
             )
+            //}
+            //item {
+            LazyRow(modifier = Modifier.padding(horizontal = 10.dp)) {
+                items(bookmarks) { photo ->
+                    ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) })
+                }
+            }
+        }
         //}
 
         //item {
-            LazyVerticalStaggeredGrid(
-                columns = StaggeredGridCells.Fixed(2),
-                modifier = Modifier
-                    .fillMaxWidth(),
-                state = listState
-            ) {
-                items(
-                    photos.distinctBy { it.id },
-                    key = { photo -> photo.id }) { photo ->
-                    ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) })
-                }
+        Text(
+            text = "최신 이미지",
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier
+                .padding(
+                    top = 22.dp,
+                    start = 20.dp,
+                    end = 20.dp,
+                    bottom = 10.dp
+                )
+        )
+        //}
 
-                item {
-                    ShimmerEffect()
-                }
+        //item {
+        LazyVerticalStaggeredGrid(
+            columns = StaggeredGridCells.Fixed(2),
+            modifier = Modifier
+                .padding(horizontal = 10.dp),
+            state = listState
+        ) {
+            items(
+                photos.distinctBy { it.id },
+                key = { photo -> photo.id }) { photo ->
+                ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) })
             }
+
+            item {
+                ShimmerEffect()
+            }
+        }
         //}
     }
 }
