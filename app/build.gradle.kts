@@ -75,10 +75,9 @@ dependencies {
     // Room
     implementation(libs.androidx.room.common)
     implementation(libs.androidx.room.ktx)
-    implementation("androidx.room:room-runtime:2.6.1") // Example version
-    ksp("androidx.room:room-compiler:2.6.1")
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
 
-    // Unsplash Photo Picker
     // Coil
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
@@ -96,6 +95,9 @@ dependencies {
     implementation(libs.hilt.android)
     implementation (libs.androidx.hilt.navigation.compose)
     ksp(libs.hilt.compiler)
+
+    // Navigation
+    implementation("androidx.navigation:navigation-compose:2.8.7")
 }
 
 ksp {
