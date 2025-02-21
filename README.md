@@ -17,6 +17,9 @@
 - **Language**
     - Kotlin
 
+- **UI**
+  - Jetpack Compose
+
 - **API**
     - [Unsplash](https://unsplash.com/developers)
 
