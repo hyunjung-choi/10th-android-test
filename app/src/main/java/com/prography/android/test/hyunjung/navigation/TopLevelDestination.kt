@@ -2,8 +2,8 @@ package com.prography.android.test.hyunjung.navigation
 
 import androidx.annotation.DrawableRes
 import com.prography.android.test.hyunjung.R
-import com.prography.android.test.hyunjung.ui.bookmark.navigation.BookmarkRoute
 import com.prography.android.test.hyunjung.ui.home.navigation.HomeRoute
+import com.prography.android.test.hyunjung.ui.random.navigation.RandomRoute
 import kotlin.reflect.KClass
 
 enum class TopLevelDestination(
@@ -17,7 +17,7 @@ enum class TopLevelDestination(
         baseRoute = HomeRoute::class,
     ),
     BOOKMARK(
-        iconId = R.drawable.ic_bookmark,
-        route = BookmarkRoute::class
+        iconId = R.drawable.ic_random,
+        route = RandomRoute::class
     )
 }

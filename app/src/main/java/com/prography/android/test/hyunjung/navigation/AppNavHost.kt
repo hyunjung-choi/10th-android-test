@@ -6,9 +6,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.prography.android.test.hyunjung.ui.bookmark.BookmarkScreen
-import com.prography.android.test.hyunjung.ui.bookmark.navigation.BookmarkRoute
 import com.prography.android.test.hyunjung.ui.home.navigation.HomeRoute
+import com.prography.android.test.hyunjung.ui.random.RandomScreen
+import com.prography.android.test.hyunjung.ui.random.navigation.RandomRoute
 
 @Composable
 fun AppNavHost(modifier: Modifier = Modifier) {
@@ -21,8 +21,8 @@ fun AppNavHost(modifier: Modifier = Modifier) {
         composable<HomeRoute> {
             HomeScreen()
         }
-        composable<BookmarkRoute> {
-            BookmarkScreen()
+        composable<RandomRoute> {
+            RandomScreen()
         }
     }
 }
