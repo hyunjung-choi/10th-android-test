@@ -100,7 +100,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
             items(
                 photos.distinctBy { it.id },
                 key = { photo -> photo.id }) { photo ->
-                ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) })
+                ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) }, showOverlay = true)
             }
 
             item {
