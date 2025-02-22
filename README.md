@@ -2,6 +2,16 @@
 
 ## 🤍 Summary
 
+### 메인 화면
+
+- **로딩 중인 상태**
+    - `SkeletonView` + `CircularProgressIndicator` 사용
+- **북마크**
+    - 북마크가 없는 상태 → 북마크 섹션 생략
+    - 북마크가 있는 상태 → `Room` 에 저장 → 북마크 섹션 보여짐
+- **무한 스크롤**
+    - 페이지 단위로 API를 호출하여, 최하단에 도달 시 다음 페이지 이미지들을 불러옴
+
 ## 📸 ScreenShots
 
 <p>
@@ -19,7 +29,7 @@
     - Kotlin
 
 - **UI**
-  - Jetpack Compose
+    - Jetpack Compose
 
 - **API**
     - [Unsplash](https://unsplash.com/developers)
