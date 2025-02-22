@@ -15,7 +15,7 @@
 ## 📸 ScreenShots
 
 <p>
-  <img src="https://github.com/user-attachments/assets/565fe6dc-0cd1-4c8a-ab1e-817fadd7985d", width="300" />
+  <img src="https://github.com/user-attachments/assets/7709b133-f468-459a-947a-39ddcdddf047", width="300" />
   <img src="https://github.com/user-attachments/assets/f8ede8da-ee70-431f-9f80-a31bf58421f6", width="300" />
 </p>
 
