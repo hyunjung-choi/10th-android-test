@@ -6,7 +6,11 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Photo(
     val id: String,
+    val title: String,
+    val description: String? = null,
     @SerialName("alt_description")
     val altDescription: String?,
-    val urls: Urls
+    val tags: List<Tag>,
+    val urls: Urls,
+    val user: User
 )
