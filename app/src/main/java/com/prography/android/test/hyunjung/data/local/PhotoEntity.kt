@@ -49,24 +49,51 @@ fun Photo.toEntity(): PhotoEntity {
     )
 }
 
-class Converters {
+class PhotoTypeConverters {
+    private val json = Json { ignoreUnknownKeys = true }
+
     @TypeConverter
-    fun fromTagList(tags: List<Tag>): String {
-        return Json.encodeToString(tags)
+    fun fromTagsList(tags: List<Tag>): String {
+        return json.encodeToString(tags)
     }
 
     @TypeConverter
-    fun toTagList(tagsString: String): List<Tag> {
-        return Json.decodeFromString(tagsString)
+    fun toTagsList(tagsString: String): List<Tag> {
+        if (tagsString.isBlank()) return emptyList()
+        return try {
+            json.decodeFromString(tagsString)
+        } catch (e: Exception) {
+            emptyList()
+        }
     }
 
     @TypeConverter
-    fun fromUser(username: User): String {
-        return Json.encodeToString(username)
+    fun fromUser(user: User?): String {
+        return if (user == null) "" else json.encodeToString(user)
     }
 
     @TypeConverter
-    fun toUser(username: String): User {
-        return Json.decodeFromString(username)
+    fun toUser(userString: String): User? {
+        if (userString.isBlank()) return null
+        return try {
+            json.decodeFromString(userString)
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+    @TypeConverter
+    fun fromUrls(urls: Urls?): String {
+        return if (urls == null) "" else json.encodeToString(urls)
+    }
+
+    @TypeConverter
+    fun toUrls(urlsString: String): Urls? {
+        if (urlsString.isBlank()) return null
+        return try {
+            json.decodeFromString(urlsString)
+        } catch (e: Exception) {
+            null
+        }
     }
 }
