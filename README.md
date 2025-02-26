@@ -15,8 +15,8 @@
 ## 📸 ScreenShots
 
 <p>
-  <img src="https://github.com/user-attachments/assets/7709b133-f468-459a-947a-39ddcdddf047", width="300" />
-  <img src="https://github.com/user-attachments/assets/53f18a6b-4bef-47b0-8cdb-66a4d1c77eec", width="300" />
+  <img src="https://github.com/user-attachments/assets/db55910c-0c4e-43e5-9659-1b11ad601619", width="300" />
+  <img src="https://github.com/user-attachments/assets/e368da8b-79c6-4137-8e36-7d6274efbd8b", width="300" />
 </p>
 
 ## 🛠️ Tech Stack
