@@ -3,6 +3,7 @@ package com.prography.android.test.hyunjung.ui.component
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -47,6 +48,7 @@ fun ImageItem(
                     model = photo.urls.regular,
                     contentDescription = null,
                     modifier = Modifier
+                        .defaultMinSize(150.dp)
                         .clip(RoundedCornerShape(10.dp)),
                     contentScale = ContentScale.Crop
                 )
@@ -63,8 +65,7 @@ fun ImageItem(
                         )
                 ) {
                     Text(
-                        text = "titletitletitle\n" +
-                                "타이틀은최대2줄까지",
+                        text = photo.altDescription.toString(),
                         modifier = Modifier
                             .align(Alignment.BottomStart)
                             .padding(top = 12.dp, bottom = 8.dp, start = 8.dp, end = 8.dp),
