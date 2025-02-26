@@ -52,7 +52,6 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
 
         ) {
         if (bookmarks.isNotEmpty()) {
-            // item {
             Text(
                 text = stringResource(R.string.bookmark),
                 fontSize = 18.sp,
@@ -65,17 +64,14 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
                         bottom = 10.dp
                     )
             )
-            //}
-            //item {
+
             LazyRow(modifier = Modifier.padding(horizontal = 10.dp)) {
                 items(bookmarks) { photo ->
                     ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) })
                 }
             }
         }
-        //}
 
-        //item {
         Text(
             text = stringResource(R.string.latest_images),
             fontSize = 18.sp,
@@ -88,9 +84,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
                     bottom = 10.dp
                 )
         )
-        //}
 
-        //item {
         LazyVerticalStaggeredGrid(
             columns = StaggeredGridCells.Fixed(2),
             modifier = Modifier
@@ -103,11 +97,10 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
                 ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) }, showOverlay = true)
             }
 
-            item {
+            items(6) {
                 ShimmerEffect()
             }
         }
-        //}
     }
 }
 
