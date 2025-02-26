@@ -1,7 +1,5 @@
 package com.prography.android.test.hyunjung.data.repository
 
-import android.util.Log
-import com.prography.android.test.hyunjung.BuildConfig
 import com.prography.android.test.hyunjung.data.local.PhotoDao
 import com.prography.android.test.hyunjung.data.local.toDomain
 import com.prography.android.test.hyunjung.data.local.toEntity
@@ -15,13 +13,12 @@ class PhotoRepository(
     private val apiService: PhotoApiService,
     private val photoDao: PhotoDao
 ) {
-    private val loadedPhotoIds = mutableSetOf<String>()
 
     suspend fun fetchLatestPhotos(page: Int): List<Photo> {
-        Log.d("HJ:::API_KEY", BuildConfig.UNSPLASH_ACCESS_KEY)
         return try {
             apiService.getLatestPhotos(page)
         } catch (e: Exception) {
+            e.printStackTrace()
             emptyList()
         }
     }

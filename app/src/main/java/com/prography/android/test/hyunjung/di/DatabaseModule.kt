@@ -21,7 +21,7 @@ object DatabaseModule {
         return Room.databaseBuilder(
             context,
             PhotoDatabase::class.java,
-            "photo_db"
+            "bookmark"
         ).build()
     }
 
