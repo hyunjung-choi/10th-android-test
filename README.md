@@ -16,7 +16,7 @@
 
 <p>
   <img src="https://github.com/user-attachments/assets/db55910c-0c4e-43e5-9659-1b11ad601619", width="300" />
-  <img src="https://github.com/user-attachments/assets/e368da8b-79c6-4137-8e36-7d6274efbd8b", width="300" />
+  <img src="https://github.com/user-attachments/assets/a22ed761-36ae-4861-b1f3-be23d472f02f", width="300" />
 </p>
 
 ## 🛠️ Tech Stack
