@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 fun ShimmerEffect() {
     Box(
         modifier = Modifier
-            .padding(10.dp)
+            .padding(5.dp)
             .size(150.dp)
             .clip(RoundedCornerShape(10.dp))
             .background(Color.Gray.copy(alpha = 0.2f))
