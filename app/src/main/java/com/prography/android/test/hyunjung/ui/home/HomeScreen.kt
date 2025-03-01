@@ -31,7 +31,10 @@ import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.filterNotNull
 
 @Composable
-fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
+fun HomeScreen(
+    onPhotoClick: (String) -> Unit,
+    viewModel: HomeViewModel = hiltViewModel()
+) {
     val photos by viewModel.photos.collectAsState()
     val bookmarks by viewModel.bookmarks.collectAsState()
     val listState = rememberLazyStaggeredGridState()
@@ -39,7 +42,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
     LaunchedEffect(listState) {
         snapshotFlow { listState.layoutInfo.visibleItemsInfo.lastOrNull()?.index }
             .filterNotNull()
-            .filter { it >= photos.size - 1 } // 마지막 아이템이 보이면 다음 페이지 요청
+            .filter { it >= photos.size - 3 }
             .collect {
                 viewModel.fetchPhotos()
             }
@@ -67,7 +70,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
 
             LazyRow(modifier = Modifier.padding(horizontal = 10.dp)) {
                 items(bookmarks) { photo ->
-                    ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) })
+                    ImageItem(photo, onClick = { onPhotoClick(photo.id) }, showOverlay = false)
                 }
             }
         }
@@ -94,7 +97,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
             items(
                 photos.distinctBy { it.id },
                 key = { photo -> photo.id }) { photo ->
-                ImageItem(photo, onClick = { viewModel.toggleBookmark(photo) }, showOverlay = true)
+                ImageItem(photo, onClick = { onPhotoClick(photo.id) }, showOverlay = true)
             }
 
             items(6) {
@@ -108,6 +111,8 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
 @Composable
 private fun MainScreenPreview() {
     _10thandroidtestTheme {
-        HomeScreen()
+        HomeScreen(
+            onPhotoClick = { }
+        )
     }
 }
