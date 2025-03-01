@@ -15,5 +15,9 @@ data class Photo(
     val urls: Urls,
     val user: User? = null,
     @Transient
-    var isBookmarked: Boolean = false
+    var isBookmarked: Boolean = false,
+    @Transient
+    var width: Long = 1,
+    @Transient
+    var height: Long = 1
 )
