@@ -32,7 +32,8 @@ fun PhotoEntity.toDomain(): Photo {
         altDescription = this.altDescription,
         tags = this.tags,
         urls = Urls(this.urls?.regular ?: ""),
-        user = this.user
+        user = this.user,
+        isBookmarked = true
     )
 }
 
