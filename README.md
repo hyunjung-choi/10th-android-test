@@ -2,7 +2,7 @@
 
 ## 🤍 Summary
 
-### 메인 화면
+### Home Screen
 
 - **로딩 중인 상태**
     - `SkeletonView` + `CircularProgressIndicator` 사용
@@ -11,6 +11,12 @@
     - 북마크가 있는 상태 → `Room` 에 저장 → 북마크 섹션 보여짐
 - **무한 스크롤**
     - 페이지 단위로 API를 호출하여, 최하단에 도달 시 다음 페이지 이미지들을 불러옴
+
+### Detail Screen
+
+- 최신 이미지 또는 북마크의 사진 클릭 시 `DetailPhotoScreen`으로 이동
+- 사진의 가로 사이즈는 고정적이며, 높이는 가변적으로 변경
+- 우측 상단 북마크 버튼 기능
 
 ## 📸 ScreenShots
 
