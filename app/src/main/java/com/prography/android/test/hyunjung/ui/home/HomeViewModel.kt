@@ -38,7 +38,7 @@ class HomeViewModel @Inject constructor(
 
     fun toggleBookmark(photo: Photo) {
         viewModelScope.launch {
-            repository.toggleBookmark(photo)
+
         }
     }
 }

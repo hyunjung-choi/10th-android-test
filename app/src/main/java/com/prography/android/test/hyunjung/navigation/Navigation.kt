@@ -9,11 +9,18 @@ import com.prography.android.test.hyunjung.navigation.Destinations.Random
 object Destinations {
     const val Home = "home"
     const val Random = "random"
+    const val Detail = "detail/{id}"
+
+    fun detailRoute(id: String) = "detail/$id"
 }
 
 class Action(navController: NavController) {
     val home: () -> Unit = { navController.navigate(Home) }
     val random: () -> Unit = { navController.navigate(Random) }
+    val detail: (String) -> Unit = { id ->
+        navController.navigate(Destinations.detailRoute(id))
+    }
+    val back: () -> Unit = { navController.popBackStack() }
 }
 
 sealed class Screen(
