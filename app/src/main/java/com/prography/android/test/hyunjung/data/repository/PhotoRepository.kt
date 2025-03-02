@@ -35,4 +35,14 @@ class PhotoRepository(
             photoDao.insertBookmark(photo.toEntity())
         }
     }
+
+    suspend fun isBookmarked(id: String): Boolean {
+        return photoDao.getBookmarks().first().any { it.id == id }
+    }
+
+    suspend fun getPhotoById(id: String): Photo {
+        val response = apiService.getPhotoDetail(id)
+        response.isBookmarked = isBookmarked(id)
+        return response
+    }
 }

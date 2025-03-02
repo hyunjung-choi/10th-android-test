@@ -1,6 +1,5 @@
 package com.prography.android.test.hyunjung.data.network
 
-import android.util.Log
 import com.prography.android.test.hyunjung.BuildConfig
 import com.prography.android.test.hyunjung.data.model.Photo
 import com.prography.android.test.hyunjung.utils.Constants
@@ -28,11 +27,22 @@ class PhotoApiService @Inject constructor(
                     append("Authorization", "Client-ID $accessKey")
                 }
             }
-            val responseBody = response.body<String>()
-            Log.d("API_RESPONSE", "Response Body: $responseBody")
             response.body()
         } catch (e: Exception) {
             emptyList()
+        }
+    }
+
+    suspend fun getPhotoDetail(id: String): Photo {
+        return try {
+            val response: HttpResponse = client.get("$baseUrl/photos/$id") {
+                headers {
+                    append("Authorization", "Client-ID $accessKey")
+                }
+            }
+            response.body()
+        } catch (e: Exception) {
+            throw Exception("Failed to fetch photo detail", e)
         }
     }
 }
