@@ -35,10 +35,4 @@ class HomeViewModel @Inject constructor(
             currentPage++
         }
     }
-
-    fun toggleBookmark(photo: Photo) {
-        viewModelScope.launch {
-
-        }
-    }
 }
