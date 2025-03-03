@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
@@ -84,11 +85,14 @@ fun ImageItem(
                     )
                 }
             } else {
+                val isPortrait = (photo.height ?: 1) > (photo.width ?: 1)
+
                 AsyncImage(
                     model = photo.urls.regular,
                     contentDescription = null,
                     modifier = Modifier
                         .height(128.dp)
+                        .widthIn(max = if (isPortrait) 100.dp else 160.dp)
                         .clip(RoundedCornerShape(10.dp)),
                     contentScale = ContentScale.Crop
                 )

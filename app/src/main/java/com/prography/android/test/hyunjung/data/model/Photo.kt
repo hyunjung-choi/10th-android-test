@@ -14,10 +14,8 @@ data class Photo(
     val tags: List<Tag> = emptyList(),
     val urls: Urls,
     val user: User? = null,
+    val width: Int? = null,
+    val height: Int? = null,
     @Transient
     var isBookmarked: Boolean = false,
-    @Transient
-    var width: Long = 1,
-    @Transient
-    var height: Long = 1
 )
