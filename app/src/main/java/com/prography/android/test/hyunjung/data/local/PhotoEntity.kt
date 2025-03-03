@@ -21,7 +21,9 @@ data class PhotoEntity(
     val altDescription: String? = null,
     val tags: List<Tag> = emptyList(),
     val urls: Urls? = null,
-    val user: User? = null
+    val user: User? = null,
+    val width: Int?,
+    val height: Int?
 )
 
 fun PhotoEntity.toDomain(): Photo {
@@ -33,7 +35,9 @@ fun PhotoEntity.toDomain(): Photo {
         tags = this.tags,
         urls = Urls(this.urls?.regular ?: ""),
         user = this.user,
-        isBookmarked = true
+        isBookmarked = true,
+        width = this.width,
+        height = this.height
     )
 }
 
@@ -46,7 +50,9 @@ fun Photo.toEntity(): PhotoEntity {
         altDescription = this.altDescription,
         tags = this.tags,
         urls = this.urls,
-        user = this.user
+        user = this.user,
+        width = this.width,
+        height = this.height
     )
 }
 
