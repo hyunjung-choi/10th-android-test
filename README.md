@@ -1,4 +1,4 @@
-# 🖼️ 10th Android Test
+# 🖼️ 이미지 스트림 아카이빙 앱
 
 ## 🤍 Summary
 
@@ -33,6 +33,26 @@
   <img src="https://github.com/user-attachments/assets/d5acc6df-0a72-48c3-8542-9e271f8ff472", width="300" />
 <img src="https://github.com/user-attachments/assets/d8d9dad4-4e7f-41eb-847d-833b82f64439", width="300" />
 </p>
+
+## 📂 Project Directory Structure
+
+```
+📂 com.prography.android.test.hyunjung/
+├── 📂 data/  
+│   ├── 📂 local/       # Room DB 관련 코드  
+│   ├── 📂 model/       # 데이터 모델 정의  
+│   ├── 📂 network/     # API 서비스 인터페이스 및 네트워크 관련 코드  
+│   └── 📂 repository/  # 데이터 레이어(레포지토리) 구현  
+├── 📂 di/              # 의존성 주입(DI) 모듈  
+├── 📂 navigation/      # 앱 내 내비게이션 관련 코드  
+├── 📂 ui/  
+│   ├── 📂 component/   # 재사용 가능한 UI 컴포넌트  
+│   ├── 📂 detail/      # 상세 화면  
+│   ├── 📂 home/        # 홈 화면  
+│   ├── 📂 random/      # 랜덤 화면  
+│   └── 📂 theme/       # 테마 관련 코드 및 스타일 정의  
+└── 📂 utils/           # 유틸리티 클래스 및 헬퍼 함수  
+```
 
 ## 🛠️ Tech Stack
 
