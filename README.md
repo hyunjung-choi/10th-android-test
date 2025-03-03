@@ -31,7 +31,13 @@
 
 <p>
   <img src="https://github.com/user-attachments/assets/d5acc6df-0a72-48c3-8542-9e271f8ff472", width="300" />
-<img src="https://github.com/user-attachments/assets/d8d9dad4-4e7f-41eb-847d-833b82f64439", width="300" />
+  <img src="https://github.com/user-attachments/assets/d8d9dad4-4e7f-41eb-847d-833b82f64439", width="300" />
+</p>
+
+### Random Screen
+
+<p>
+  <img src="https://github.com/user-attachments/assets/2824a817-5b39-4d51-a47f-d06ddf7cc73a", width="300" />
 </p>
 
 ## 📂 Project Directory Structure
