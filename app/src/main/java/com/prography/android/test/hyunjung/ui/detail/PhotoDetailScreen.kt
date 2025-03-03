@@ -47,7 +47,7 @@ fun PhotoDetailScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Black)
+            .background(Black.copy(alpha = 0.9f))
     ) {
         when {
             isLoading -> {
