@@ -15,9 +15,16 @@
 ### Detail Screen
 
 - 최신 이미지 또는 북마크의 사진 클릭 시 `DetailPhotoScreen`으로 이동
-- 사진의 가로 사이즈는 고정적이며, 높이는 가변적으로 변경
+- 사진의 가로 사이즈는 고정적이며, **높이는 가변적으로 변경**
 - Description은 2줄, 태그는 4개까지 노출
 - 우측 상단 북마크 버튼 기능
+
+### Random Screen
+
+- '랜덤 탭' 클릭 시 랜덤으로 이미지를 보여줌
+- 이미지 카드를 좌우로 스와이핑
+    - 좌측 스와이핑 → 다음 카드로 넘어감
+    - 우측 스와이핑 → 북마크에 저장 + 다음 카드로 넘어감
 
 ## 📸 ScreenShots
 
@@ -81,9 +88,10 @@
 
 - **Network**
     - Ktor
+    - Firebase
 
 - **Asynchronous Processing**
-    - Coroutines & Flow
+    - Coroutine & Flow
 
 - **DI**
     - Hilt
